@@ -1,0 +1,337 @@
+/* RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html, body {
+    width: 100%;
+    background: #f5f5f5;
+    color: #222;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVIGATION BAR */
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    padding: 0 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+nav.scrolled {
+    background-color:#6fc1f4;
+    box-shadow: 0 2px 8px rgba(8, 8, 8, 0.1);
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav.scrolled ul li a {
+    color: #0077C2;
+}
+
+nav ul li a:hover {
+    color: #eff0f1;
+}
+
+/* Hamburger Menu */
+.checkbtn {
+    font-size: 30px;
+    color: #0077C2;
+    float: right;
+    line-height: 60px;
+    margin-right: 1px;
+    cursor: pointer;
+    display: none;
+    z-index: 1100;
+}
+
+#check {
+    display: none;
+}
+
+/* Responsive Nav */
+@media (max-width: 1024px) {
+    .checkbtn {
+        display: block;
+        z-index: 1101;
+        position: relative;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        background: #6fc1f4;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        padding-top: 2rem;
+        transition: left 0.4s ease;
+        z-index: 1100;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+    nav ul li a {
+        color: white;
+        font-size: 18px;
+    }
+    nav {
+        background-color: #ecf0f3;
+    }
+}
+
+/* HEADER */
+header {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('file_000000002a3061f9b1af722bf8b60401_conversation_id=6824be08-bee8-8004-9220-e27275a6d86a&message_id=c922bd13-c5ad-4ee5-9a3e-a8498693f7e8.PNG') no-repeat center;
+    background-size: cover;
+    padding: 400px 20px 40px;
+    text-align: center;
+}
+
+.top h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* ICONS UNDER HEADER */
+.header-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+}
+.bio1, .bio2, .bio3, .bio4 {
+    width: 130px;
+    height: 130px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+}
+.bio1 i, .bio2 i, .bio3 i, .bio4 i {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+/* MINERAL SECTION */
+section {
+    background: #8BD3DD;
+    padding: 40px 20px;
+}
+.minerals-composition-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+.minerals-left, .minerals-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1 1 250px;
+}
+.minerals-center {
+    flex: 0 1 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box {
+    max-width: 180px;
+}
+.num1, .num2, .num3, .num4, .num5, .num6 {
+    background: #fff;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: transform 0.3s;
+}
+.num1:hover, .num2:hover, .num3:hover,
+.num4:hover, .num5:hover, .num6:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,119,194,0.3);
+    color:  #0077C2;
+}
+
+/* PRODUCT SECTION */
+article {
+    background: #E0F7FA;
+    padding: 40px 20px;
+}
+.wordings {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+}
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    max-width: 1100px;
+    margin: auto;
+}
+.product1, .product2, .product3, .product4, .product5, .product6 {
+    background: #fff;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+.product1:hover, .product2:hover, .product3:hover,
+.product4:hover, .product5:hover, .product6:hover {
+    transform: translateY(-5px);
+}
+.old1, .old2, .old3, .old4, .old5, .old6 {
+    text-decoration: line-through;
+    color: #888;
+    margin-top: 12px;
+}
+.go, .go2, .go3, .go4, .go5, .go6 {
+    color: #0077C2;
+    font-weight: bold;
+    margin-top: 6px;
+}
+.tap1, .tap2 {
+    margin-top: 12px;
+    border: 1px dashed #0077C2;
+    border-radius: 20px;
+    padding: 8px 16px;
+    background: #fff;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+}
+.tap1:hover {
+    background: #0077C2;
+    color: rgb(238, 226, 226);
+}
+.tp1:hover{
+    color: white;
+    font-weight: bold;
+}
+.tp2:hover{
+    color: white;
+    font-weight: bold;
+}
+.tap2:hover {
+    background: #0077C2;
+   color: white;
+}
+
+
+/* TESTIMONIALS */
+blockquote {
+    margin: 48px 0;
+}
+.bou {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+    max-width: 1000px;
+    margin: auto;
+}
+.review1, .review2 {
+    background: #fff;
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    box-shadow: 0 10px 22px;
+}
+.review1 img, .review2 img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+    background: #333;
+    color: white;
+    padding: 32px 16px;
+}
+footer h5 {
+    margin-bottom: 12px;
+}
+footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+footer li {
+    margin-bottom: 6px;
+}
+footer a {
+    color: white;
+}
+footer a:hover {
+    color: #58a6ff;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media screen and (max-width: 768px) {
+    .top h1 {
+        font-size: 2rem;
+    }
+
+    .bio1, .bio2, .bio3, .bio4 {
+        width: 100px;
+        height: 100px;
+        font-size: 12px;
+    }
+}

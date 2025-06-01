@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic page setup stuff -->
+    <meta charset="UTF-8">
+    
+    <title>Contact Us</title>
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href=".\fontawesome-free-6.7.2-web/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-blue: #0d6efd;
+            --water-blue: #1da2d8;
+            --light-blue: #e7f5ff;
+        }
+        
+        body {
+            font-family: Poppins, sans-serif;
+            background-color: #f8f9fa;
+        }
+        nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    transition: background-color 0.3s ease;
+    background-color: none;
+}
+
+nav.scrolled {
+    background-color: #fff ;
+
+}
+nav.scrolled ul li a{
+    color: #58a6ff;
+}
+
+img{
+    width: 75px;
+    height: auto;
+    padding: 0 ;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+    display: flex;
+    gap: 2 rem;
+    
+}
+nav ul li{
+    display: inline-block;
+    line-height: 60px;
+    margin: 0;
+    outline: none;
+    justify-content: center;
+}
+nav ul li a{
+   
+    color:#fff ;
+    font-size: 17px;
+    padding: 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin: 10px 20px;
+    padding: 0rem;
+}
+.navbar ul li a:focus {
+    color: #fff;
+    border-bottom-color: #58a6ff;
+    outline: none;
+  }
+a:hover{
+    color: #58a6ff;
+}
+#check{
+    display: none;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: #0077C2;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+    z-index: 1100;
+}
+
+@media (max-width: 1024px) {
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #6fc1f4;
+        top: 60px;
+        left: -100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+        transition: left 0.3s ease-in-out;
+        padding-top: 2rem;
+        margin: 0;
+        z-index: 999;
+    }
+
+    nav ul.show {
+        left: 0;
+    }
+
+    nav ul li {
+        display: block;
+        line-height: 40px;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .checkbtn {
+        display: block;
+    }
+}
+        
+       .water-header {
+    background: linear-gradient(147deg, rgba(9, 10, 10, 0.85), rgba(17, 18, 19, 0.85)), 
+                url('09.jpg') center center/cover no-repeat;
+    color: white;
+    padding: 60px 0;
+    margin-bottom: 40px;
+    position: relative;
+    text-align: center;
+}
+        
+        .water-header::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23ffffff"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%23ffffff"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23ffffff"></path></svg>');
+        }
+       
+        .water-icon {
+            margin-top: 3.5rem;
+            font-size: 2.5rem;
+            color: #0077C2;
+            margin-bottom: 15px;
+        }
+        
+        .contact-card {
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border: none;
+            overflow: hidden;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-info {
+            background-color: var(--light-blue);
+            padding: 30px;
+            height: 100%;
+        }
+        
+        .form-control:focus {
+            border-color: #0077C2; 
+            box-shadow: 0 0 0 0.25rem rgba(29, 162, 216, 0.25);
+        }
+        
+        .btn-water {
+            background-color:  #0077C2;;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+        }
+        
+        .btn-water:hover {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        .Quest{
+            color: #0077C2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Water-themed Header -->
+    <nav>
+    <div class="checkbtn" id="toggleBtn">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <label class="logo"><img src="Logot.png" id="navbar-logo" width="50px" height="auto"></label>
+    <ul id="navMenu">
+        <li><a target="_blank" class="active" href="index.html">HOME</a></li>
+        <li><a target="_blank" href="About Us.html">ABOUT US</a></li>
+        <li><a target="_blank" href="product.html">PRODUCTS</a></li>
+        <li><a target="_blank" href="contact us.html">CONTACT US</a></li>
+        <li><a target="_blank" href="mailto:anchoruniwater.aul@gmail.com"><i class="fa-solid fa-envelope"></i> anchoruniwater.aul@gmail.com</a></li>
+        <li><a href="tel:08117223311"><i class="fa-solid fa-phone"></i> 08117223311</a></li>
+    </ul>
+</nav>
+    <header class="water-header text-center">
+        <div class="container">
+            <br> <br>
+            <h1 style="font-size: 35px;" class="display-4 fw-bold mb-3">CONTACT US</h1>
+            <p class="lead">Get in touch with us for the purest water solutions</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row g-4">
+            <!-- Contact Information -->
+            <div class="col-lg-5">
+                <div class="contact-card h-100">
+                    <div class="contact-info">
+                        <h2 class="mb-4">Contact Information</h2>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="me-3 Quest">
+                                <i class="fas fa-map-marker-alt fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Our Factory</h5>
+                                <p class="mb-0">123 Pure Water Avenue, Hydration City, HC 98765</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="me-3 Quest">
+                                <i class="fas fa-phone fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Call Us</h5>
+                                <p class="mb-0">Main Office: (123) 456-7890<br>Customer Service: (123) 456-7891</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="me-3 Quest">
+                                <i class="fas fa-envelope fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Email Us</h5>
+                                <p class="mb-0">info@pureanchorwater.com<br>sales@purewater.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex">
+                            <div class="me-3 Quest">
+                                <i class="fas fa-clock fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Working Hours</h5>
+                                <p class="mb-0">Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <hr class="my-4">
+                        
+                        <h5 class="mb-3">Follow Us</h5>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <div class="contact-card bg-white p-4 h-100">
+                    <h2 class="mb-4">Send Us a Message</h2>
+                    <form action="https://formsubmit.co/dioik6@gmail.com" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input placeholder="first name" type="text" name="firstname" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input placeholder="last name" type="text" name="last name" class="form-control" id="lastName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input placeholder="email" type="email" name="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input placeholder="phone number" type="tel" name="tel" class="form-control" id="phone">
+                            </div>
+                            <div class="col-12">
+                                <label for="subject" class="form-label">Subject</label>
+                                <select  name="subject" class="form-select" id="subject">
+                                    <option>Choose...</option>
+                                    <option>General Inquiry</option>
+                                    <option>Product Information</option>
+                                    <option>Bulk Order</option>
+                                    <option>Complaint</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label  for="message" class="form-label">Your Message</label>
+                                <textarea placeholder="Write your order..." name="message" class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <input type="hidden"  name="Anchoruniwater" value="Thank you for your patronage!! We'll be in touch" id="">
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="newsletter">
+                                    <label class="form-check-label" for="newsletter">
+                                        Subscribe to our newsletter
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-water mt-2">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Map Section -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h2 class="mb-4 text-center">Our Location</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215373510518!2d-73.98784492416428!3d40.74844047138961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1689874722354!5m2!1sen!2sus" 
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white pt-4 mt-5">
+         <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <h5>Anchor Water Factory</h5>
+              <p>Delivering pure, safe water to <br>Anchor University and beyond.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+               <h5>Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><a href="Home.htm" class="text-white">Home</a></li>
+                <li><a href="About Us.html" class="text-white">About Us</a></li>
+                <li><a href="product.html" class="text-white">Products</a></li>
+                <li><a href="contact us.html" class="text-white">Contact Us</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-md-4 mb-3">
+              <h5>Contact</h5>
+               <p><i class="fa-solid fa-envelope"></i> anchoruniwater.aul@gmail.com</p>
+               <p><i class="fa-solid fa-phone"></i> 08117223311</p>
+            <div>
+                  <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="text-white me-2"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            </div>
+          </div>
+             <hr class="bg-dark">
+             <div class="text-center pb-2">
+             &copy; 2025 Anchor Water Factory. All rights reserved.
+             </div>
+          </div>
+      </footer>
+    
+
+    <!-- Bootstrap JS -->
+  <script>
+  // Select toggle button and nav menu
+  const toggleBtn = document.querySelector('.checkbtn');
+  const navMenu = document.getElementById('navMenu');
+
+  // Toggle 'show' class on nav menu on click
+  toggleBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+
+  // Optional: Close menu when clicking a link (for better UX on mobile)
+  document.querySelectorAll('#navMenu li a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+    });
+  });
+
+  // Scroll listener to change navbar background and logo
+  window.addEventListener('scroll', function () {
+    const nav = document.querySelector('nav');
+    const logo = document.getElementById('navbar-logo');
+    nav.classList.toggle('scrolled', window.scrollY > 0);
+    if (nav.classList.contains('scrolled')) {
+      logo.src = 'Logos.png'; 
+    } else {
+      logo.src = 'Logot.png'; 
+    }
+  });
+</script>
+
+
+
+</body>
+</html>
