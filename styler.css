@@ -154,6 +154,19 @@ a:hover{
     background-color: #fff;
     color: #0f94e7;
 }
+@media (max-width: 768px) {
+    .carousel-caption {
+        padding: 0.5rem 1rem;
+        bottom: 1rem;
+    }
+    .carousel-caption h5 {
+        font-size: 1.2rem;
+    }
+    .carousel-caption p,
+    .carousel-caption a {
+        font-size: 0.95rem;
+    }
+}
 #Intro{
     margin-top: 0px;
     background-color: #fff;
