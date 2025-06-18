@@ -154,6 +154,7 @@ a:hover{
     background-color: #fff;
     color: #0f94e7;
 }
+/*  Copy this whole section*/
 @media (max-width: 768px) {
     .carousel-caption {
         padding: 0.5rem 1rem;
@@ -167,6 +168,7 @@ a:hover{
         font-size: 0.95rem;
     }
 }
+/*End Here  */
 #Intro{
     margin-top: 0px;
     background-color: #fff;
